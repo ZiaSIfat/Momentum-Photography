@@ -1,0 +1,25 @@
+.footer-div {
+    background-color: rgb(45, 45, 45);
+    height: 300px;
+    font-size: 10px;
+    color: rgb(135, 191, 226);
+}
+
+.logo-pic {
+    height: 100px;
+    width: 100px;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.copy {
+    color: gray;
+}
