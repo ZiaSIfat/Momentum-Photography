@@ -6,10 +6,12 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
+import Title from './Components/Title/Title';
 
 function App() {
   return (
     <div className="App">
+      <Title></Title>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
