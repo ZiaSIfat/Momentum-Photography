@@ -19,10 +19,9 @@
     background-color: rgb(237, 237, 237);
 }
 
-.submit-btn {
+/* .submit-btn {
     background-color: rgb(135, 191, 226);
     color: white;
-    border: 1px solid rgb(255, 255, 255);
     border-radius: 8px;
     width: 250px;
     margin: 8px;
@@ -30,7 +29,8 @@
 
 .submit-btn:hover {
     background-color: rgb(37, 126, 182);
-}
+    border: 1px solid rgb(255, 255, 255); */
+/* } */
 
 .signup {
     color: rgb(135, 191, 226);

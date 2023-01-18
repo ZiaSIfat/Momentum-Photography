@@ -3,15 +3,16 @@ import { Carousel } from 'react-bootstrap';
 import banner1 from '../../Images/Banner/banner1.jpg';
 import banner2 from '../../Images/Banner/banner2.jpg';
 import banner3 from '../../Images/Banner/banner3.jpg';
+import './Banner.css';
 
 
 const Banner = () => {
     return (
-        <div>
+        <div className='container'>
             <Carousel fade>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className=" banner-img"
                         src={banner1}
                         alt="First slide"
                     />
@@ -22,7 +23,7 @@ const Banner = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className=" banner-img"
                         src={banner2}
                         alt="Second slide"
                     />
@@ -34,7 +35,7 @@ const Banner = () => {
                 </Carousel.Item>
                 <Carousel.Item>
                     <img
-                        className="d-block w-100"
+                        className=" banner-img"
                         src={banner3}
                         alt="Third slide"
                     />

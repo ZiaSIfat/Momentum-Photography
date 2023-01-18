@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Premium",
+        "price": "60000",
+        "description1": "5 Hours Exclusive session.Whole event will be directed and documented as a story of the event.",
+        "description2": "5 Hours event duration.",
+        "description3": "Unlimited pictures.150 specially edited pictures.",
+        "description4": "All soft copy of photos will be delivered in a pendrive."
+    },
+    {
+        "id": 2,
+        "name": "Gold",
+        "price": "45000",
+        "description1": "3.5 Hours Exclusive session.Conceptual Photography and Direction.",
+        "description2": "5 Hours event duration.",
+        "description3": "Unlimited pictures.150 specially edited pictures.",
+        "description4": "All soft copy of photos will be delivered in a pendrive."
+    },
+    {
+        "id": 3,
+        "name": "Silver",
+        "price": "35000",
+        "description1": "2 Hours Exclusive session.And there will be a potrait session.",
+        "description2": "5 Hours event duration",
+        "description3": "Unlimited pictures.100 specially edited pictures.",
+        "description4": "All soft copy of photos will be delivered in a pendrive."
+    },
+    {
+        "id": 4,
+        "name": "Platinum",
+        "price": "25000",
+        "description1": "1 Hours Exclusive session.",
+        "description2": "Event duration will be 5 Hours.",
+        "description3": ".Unlimited pictures.50 specially edited pictures.",
+        "description4": "All soft copy of photos will be delivered in a pendrive."
+    }
+]
