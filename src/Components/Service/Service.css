@@ -1,11 +1,11 @@
 .card-body {
     height: 550px;
     background-color: rgb(135, 191, 226);
-    color: white
+    color: white;
+    border-radius: 10px;
 }
 
 .checkout-btn {
-    /* background-color: rgb(135, 191, 226); */
     color: black;
     border-radius: 8px;
     border: none;
@@ -15,4 +15,12 @@
     background-color: rgb(37, 126, 182);
     border: 1px solid rgb(255, 255, 255);
     color: white;
+}
+
+.break {
+    border: 1px solid white;
+}
+
+.card-body:hover {
+    background-color: black;
 }
