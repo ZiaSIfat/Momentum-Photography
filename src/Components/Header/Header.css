@@ -4,6 +4,12 @@
     justify-content: center;
 }
 
+@media screen and (max-width:576px) {
+    .navigation {
+        justify-content: space-between;
+    }
+}
+
 .navbar {
     color: white;
     text-decoration: none;
