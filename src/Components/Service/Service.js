@@ -13,7 +13,7 @@ const Service = ({ service }) => {
     }
 
     return (
-        <div className='card-body'>
+        <div className='card-body mb-4'>
             <h1 className='mt-3'>{name}</h1>
             <hr className='text-white' />
             <h3>Price: {price} tk</h3>
