@@ -16,7 +16,7 @@ const Header = () => {
     return (
 
         <div className='mb-3 container'>
-            <nav className='navigation w-100'>
+            <nav className='navigation'>
                 <Link className='navbar' to='/'>Home</Link>
                 <Link className='navbar' to='/signup'>SignUp</Link>
                 {
@@ -28,8 +28,6 @@ const Header = () => {
                 <Link className='navbar' to='/blogs'>Blogs</Link>
                 <Link className='navbar' to='/about'>About</Link>
             </nav>
-
-
         </div>
     );
 };
