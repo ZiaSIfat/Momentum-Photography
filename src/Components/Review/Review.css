@@ -1,0 +1,18 @@
+.review-div {
+    height: 200px;
+    width: 400px;
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: small;
+    color: white;
+    border-radius: 20px;
+    background-color: rgb(135, 191, 226);
+}
+
+.review-img {
+    height: 70px;
+    width: 70px;
+    border-radius: 100px;
+}

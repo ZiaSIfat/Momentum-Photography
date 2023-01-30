@@ -13,7 +13,7 @@ const Service = ({ service }) => {
     }
 
     return (
-        <div className='card-body mb-4'>
+        <div className='card-body card-div mb-4'>
             <h1 className='mt-3'>{name}</h1>
             <hr className='text-white' />
             <h3>Price: {price} tk</h3>
@@ -25,7 +25,7 @@ const Service = ({ service }) => {
             <p>{description3}</p>
             <hr className='text-white' />
             <p>{description4}</p>
-            <button onClick={handleCheckout} className='mt-3 checkout-btn'>Checkout</button>
+            <button onClick={handleCheckout} className='mt-3 checkout-btn'>Book Now</button>
         </div>
 
 

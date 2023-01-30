@@ -31,7 +31,7 @@ const Login = () => {
     }
 
     if (user) {
-        navigate('/');
+        navigate('/checkout');
     }
 
     return (
@@ -47,7 +47,7 @@ const Login = () => {
                         <button className='submit-btn'>Login</button>
                     </form>
                     <p className='navigate'>Dont have an account? <Link className='login' to='/signup'>Please Signup</Link></p>
-                    <p>{error?.message}</p>
+                    <p className='text-danger'>{error?.message}</p>
                 </div>
             </div>
         </div>

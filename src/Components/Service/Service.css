@@ -1,9 +1,9 @@
-.card-body {
+.card-div {
     height: 550px;
     background-color: rgb(135, 191, 226);
     color: white;
     border-radius: 10px;
-    transition: all .5s linear;
+    transition: all .7s linear;
 }
 
 .checkout-btn {
@@ -18,11 +18,7 @@
     color: white;
 }
 
-.break {
-    border: 1px solid white;
-}
-
-.card-body:hover {
+.card-div:hover {
     background-color: black;
     transform: scale(1.1);
 }
