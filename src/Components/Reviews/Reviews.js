@@ -15,8 +15,8 @@ const Reviews = () => {
     }, [])
 
     return (
-        <div className='container'>
-            <h1 className='text-white mt-4'>Review</h1>
+        <div className='container mb-5'>
+            <h1 className='text-white mt-4'>Reviews</h1>
             <div className='reviews-container'>
                 {
                     reviews.map(review => <Review

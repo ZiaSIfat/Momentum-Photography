@@ -1,5 +1,4 @@
 import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import './Service.css';
 
@@ -13,7 +12,7 @@ const Service = ({ service }) => {
     }
 
     return (
-        <div className='card-body card-div mb-4'>
+        <div className='card-div mb-4'>
             <h1 className='mt-3'>{name}</h1>
             <hr className='text-white' />
             <h3>Price: {price} tk</h3>

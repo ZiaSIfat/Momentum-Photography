@@ -1,7 +1,6 @@
 .review-div {
-    height: 200px;
-    width: 400px;
-    /* border: 1px solid white; */
+    height: 450px;
+    width: 350px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -12,7 +11,13 @@
 }
 
 .review-img {
-    height: 70px;
+    height: 80px;
     width: 70px;
     border-radius: 100px;
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .review-div {
+        width: 250px;
+    }
 }
