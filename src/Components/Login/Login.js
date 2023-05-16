@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Login = () => {
 
+    const { id } = useParams();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    // const location = useLocation();
+    // const from = location.state.pathname || "/";
+
+
 
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error,
+        error
+
     ] = useSignInWithEmailAndPassword(auth);
 
     const handleEmailBlur = e => {
@@ -30,8 +36,14 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
 
+
     if (user) {
-        navigate('/checkout');
+        navigate(`/checkout/${id}`);
+    }
+
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     return (

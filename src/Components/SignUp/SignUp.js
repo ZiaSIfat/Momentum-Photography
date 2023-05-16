@@ -20,30 +20,29 @@ const SignUp = () => {
         loading,
     ] = useCreateUserWithEmailAndPassword(auth);
 
-    const handleEmailBlur = e => {
-        setEmail(e.target.value);
-    }
+    // const handleEmailBlur = e => {
+    //     setEmail(e.target.value);
+    // }
 
-    const handleNameBlur = e => {
-        SetName(e.target.value);
-    }
+    // const handleNameBlur = e => {
+    //     SetName(e.target.value);
+    // }
 
-    const handlePassBlur = e => {
-        setPassword(e.target.value);
-    }
+    // const handlePassBlur = e => {
+    //     setPassword(e.target.value);
+    // }
 
-    const handleConfirmPass = e => {
-        setConfirmPass(e.target.value);
-    }
+    // const handleConfirmPass = e => {
+    //     setConfirmPass(e.target.value);
+    // }
 
     const handleSignUp = e => {
-        e.preventDefault()
-        if (password !== confirmPass) {
-            setError('Passwords didnt matched');
-            return;
-        }
-        createUserWithEmailAndPassword(email, password);
-
+        e.preventDefault();
+        const form = e.target
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(form)
     }
 
     if (user) {
@@ -55,15 +54,15 @@ const SignUp = () => {
             <div className='container'>
                 <div className='signup-form'>
                     <div>
-                        <h1 className='signup-title'>SignUp</h1>
+                        <h1 className='title'>SignUp</h1>
                         <form onSubmit={handleSignUp}>
-                            <input onBlur={handleNameBlur} type="text" placeholder='Name' required />
+                            <input type="text" placeholder='Name' name='name' required />
                             <br />
-                            <input onBlur={handleEmailBlur} type="email" name='email' placeholder='Email' required />
+                            <input type="email" name='email' placeholder='Email' required />
                             <br />
-                            <input onBlur={handlePassBlur} type="password" name="Password" id="" placeholder='Password' required />
+                            <input type="password" name="Password" id="" placeholder='Password' required />
                             <br />
-                            <input onBlur={handleConfirmPass} type="password" name="Password" id="" placeholder='Confirm Password' required />
+                            <input type="password" name="Password" id="" placeholder='Confirm Password' required />
                             <br />
                             <input type="number" placeholder='Phone' />
                             <br />

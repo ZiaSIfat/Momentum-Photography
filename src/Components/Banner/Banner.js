@@ -17,8 +17,8 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>A picture is worth a thousand words</h3>
+                        <p>It clearly and beautifully captures your emotions-the joy,the laughter,the tears,you name it.Our pride is in offering the best shoots as we help you tell your story in photos</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -29,8 +29,8 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Ready to take you beyond your imagiination</h3>
+                        <p>We take photos so perfectly that you will feel the same that you had felt in that very special day with your very special one.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -41,9 +41,9 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
+                        <h3>Every moment of your life is beautiful.</h3>
                         <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                            Your each moment,your each emotion is nothing but a beautiful picture and  we just want to hold on those moments with our camera and make it a piece of art with our adroit editing.
                         </p>
                     </Carousel.Caption>
                 </Carousel.Item>
