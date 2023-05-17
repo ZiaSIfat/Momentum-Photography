@@ -1,8 +1,9 @@
 .footer-div {
     background-color: rgb(45, 45, 45);
-    height: 300px;
-    font-size: 10px;
-    color: rgb(135, 191, 226);
+    height: 350px;
+    font-size: 15px;
+    /* color: rgb(135, 191, 226); */
+    color: white;
 }
 
 .logo-pic {
@@ -17,9 +18,17 @@
 
 .footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
 .copy {
     color: gray;
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+    color: rgb(135, 191, 226);
+
 }

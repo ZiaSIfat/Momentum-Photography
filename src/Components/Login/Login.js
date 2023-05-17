@@ -42,6 +42,7 @@ const Login = () => {
     const handleLogin = e => {
         e.preventDefault();
         signInWithEmailAndPassword(email, password);
+
     }
 
     const resetPassword = async () => {

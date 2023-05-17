@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Checkout = () => {
@@ -14,7 +16,7 @@ const Checkout = () => {
     const [email, setEmail] = useState('');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState(0);
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
@@ -44,9 +46,13 @@ const Checkout = () => {
         setPhone(e.target.value);
     }
 
+    if (loading) {
+        setMessage("Thanks for booking")
+    }
+
     const handleSubmit = () => {
-        // setMessage("Thanks for booking");
-        navigate('/last');
+        toast("Thanks for booking");
+        // navigate("/");
     }
 
 
@@ -66,7 +72,7 @@ const Checkout = () => {
                         <input onBlur={handlePhoneBlur} type="number" placeholder='Phone' />
                         <br />
                         <button onClick={handleSubmit} className='submit-btn'>Book</button>
-                        {/* <p className='text-white'>{message}</p> */}
+                        <ToastContainer />
                     </form>
                 </div>
             </div>
