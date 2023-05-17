@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
@@ -24,6 +27,11 @@ const Login = () => {
 
     ] = useSignInWithEmailAndPassword(auth);
 
+
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+
+
+
     const handleEmailBlur = e => {
         setEmail(e.target.value);
     }
@@ -36,6 +44,10 @@ const Login = () => {
         signInWithEmailAndPassword(email, password);
     }
 
+    const resetPassword = async () => {
+        await sendPasswordResetEmail(email);
+        toast("Sent Email")
+    }
 
     if (user) {
         navigate(`/checkout/${id}`);
@@ -59,7 +71,9 @@ const Login = () => {
                         <button className='submit-btn'>Login</button>
                     </form>
                     <p className='navigate'>Dont have an account? <Link className='login' to='/signup'>Please Signup</Link></p>
+                    <p className='navigate'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
                     <p className='text-danger'>{error?.message}</p>
+                    <ToastContainer />
                 </div>
             </div>
         </div>

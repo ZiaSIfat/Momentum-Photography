@@ -45,3 +45,13 @@
 .navigate {
     color: white;
 }
+
+.reset-btn {
+    color: rgb(135, 191, 226);
+    text-decoration: none;
+
+}
+
+.reset-btn:hover {
+    color: rgb(37, 126, 182);
+}
