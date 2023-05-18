@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
+import { SiFacebook } from "react-icons/si";
+import { VscGithub } from "react-icons/vsc";
+import { ImGoogle3 } from "react-icons/im";
+
+
+
+
 
 
 const Login = () => {
@@ -27,6 +35,7 @@ const Login = () => {
 
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
 
     const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
 
@@ -45,12 +54,16 @@ const Login = () => {
 
     }
 
+    const handleGoogle = () => {
+        signInWithGoogle();
+    }
+
     const resetPassword = async () => {
         await sendPasswordResetEmail(email);
         toast("Sent Email")
     }
 
-    if (user) {
+    if (user || user1) {
         navigate(`/checkout/${id}`);
     }
 
@@ -76,6 +89,21 @@ const Login = () => {
                     <p className='text-danger'>{error?.message}</p>
                     <ToastContainer />
                 </div>
+
+            </div>
+            <div className='d-flex align-items-center'>
+                <div className='line w-50'></div>
+                <p className='text-white mt-2 px-2'>or</p>
+                <div className='line w-50'></div>
+            </div>
+            <div >
+                <button className='submit-btn'><SiFacebook className='me-2 mb-1' />Facebook Login</button>
+            </div>
+            <div>
+                <button onClick={handleGoogle} className='submit-btn'><ImGoogle3 className='me-2 mb-1' /> Google Login</button>
+            </div>
+            <div>
+                <button className='submit-btn'><VscGithub className='me-2 mb-1' />Github Login</button>
             </div>
         </div>
     );

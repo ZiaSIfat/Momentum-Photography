@@ -24,6 +24,7 @@ const Footer = () => {
                     </div>
 
                 </div>
+                <div style={{ height: '1px' }} className='bg-white'></div>
                 <div className='footer mt-5'>
                     <div>
                         <span className='me-5 copy'>Copyright @2023. All rights reserved by momentumphotography.com</span>

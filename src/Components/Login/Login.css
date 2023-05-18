@@ -55,3 +55,9 @@
 .reset-btn:hover {
     color: rgb(37, 126, 182);
 }
+
+.line {
+    height: 1px;
+    background-color: rgb(135, 191, 226);
+
+}
