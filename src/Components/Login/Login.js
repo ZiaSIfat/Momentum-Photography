@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
@@ -35,9 +35,11 @@ const Login = () => {
 
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user1, error1] = useSignInWithGoogle(auth);
+    const [signInWithGithub, user2, error2] = useSignInWithGithub(auth);
+    const [signInWithFacebook, user3, error3] = useSignInWithFacebook(auth);
 
-    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail, sending, error4] = useSendPasswordResetEmail(auth);
 
 
 
@@ -58,15 +60,29 @@ const Login = () => {
         signInWithGoogle();
     }
 
+    const handleGithub = () => {
+        signInWithGithub();
+    }
+
+    const handleFacebook = () => {
+        signInWithFacebook();
+    }
+
     const resetPassword = async () => {
         await sendPasswordResetEmail(email);
         toast("Sent Email")
     }
 
-    if (user || user1) {
+    if (user || user1 || user2 || user3) {
         navigate(`/checkout/${id}`);
     }
 
+
+    // if (error || error1 || error2 || error3) {
+    //     // return (
+    //     //     <div className='text-danger'>User Not Found</div>
+    //     // )
+    // }
 
     if (loading) {
         return <Loading></Loading>
@@ -86,7 +102,7 @@ const Login = () => {
                     </form>
                     <p className='navigate'>Dont have an account? <Link className='login' to='/signup'>Please Signup</Link></p>
                     <p className='navigate'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
-                    <p className='text-danger'>{error?.message}</p>
+                    <p className='text-danger'>{error?.message || error1?.message || error2?.message || error3?.message}</p>
                     <ToastContainer />
                 </div>
 
@@ -97,13 +113,13 @@ const Login = () => {
                 <div className='line w-50'></div>
             </div>
             <div >
-                <button className='submit-btn'><SiFacebook className='me-2 mb-1' />Facebook Login</button>
+                <button onClick={handleFacebook} className='submit-btn'><SiFacebook className='me-2 mb-1' />Facebook Login</button>
             </div>
             <div>
                 <button onClick={handleGoogle} className='submit-btn'><ImGoogle3 className='me-2 mb-1' /> Google Login</button>
             </div>
             <div>
-                <button className='submit-btn'><VscGithub className='me-2 mb-1' />Github Login</button>
+                <button onClick={handleGithub} className='submit-btn'><VscGithub className='me-2 mb-1' />Github Login</button>
             </div>
         </div>
     );
