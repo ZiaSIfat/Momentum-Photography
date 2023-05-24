@@ -4,22 +4,31 @@ import logo from '../../Images/logo (1).png';
 import { IoCallSharp } from "react-icons/io5";
 import { MdLocationOn } from "react-icons/md";
 import { GrMail } from "react-icons/gr";
-
+import { Link } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
 
 const Footer = () => {
+
+    const handleLogoClick = () => {
+        scroll.scrollToTop();
+    };
+
+
     return (
         <div>
             <div className=' footer-div mt-3'>
                 <div className='container footer-section w-75'>
                     <div className='mt-4'>
-                        <img className='logo-pic' src={logo} alt="" />
+                        <Link to='/'>
+                            <img onClick={handleLogoClick} className='logo-pic' src={logo} alt="" />
+                        </Link>
                         <br />
                         <span>MOMENTUM PHOTOGRAPHY</span>
                     </div>
                     <div className='mt-5'>
                         <h3>Chittagong Office</h3>
                         <p><MdLocationOn className='icon' /> House #12, Road #02 , Nandan Kanan , DC Hill , Chattogram</p>
-                        <p><GrMail className='icon' />  dreamweaverphotography.bd@gmail.com</p>
+                        <p><GrMail className='icon' />  momentumphotography.bd@gmail.com</p>
                         <p><IoCallSharp className='icon' /> 3433434232</p>
                     </div>
 

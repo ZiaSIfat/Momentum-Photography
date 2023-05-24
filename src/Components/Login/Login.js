@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 import { ImGoogle3 } from "react-icons/im";
@@ -22,8 +21,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = location.state.pathname || "/";
+
 
 
 
@@ -78,11 +76,6 @@ const Login = () => {
     }
 
 
-    // if (error || error1 || error2 || error3) {
-    //     // return (
-    //     //     <div className='text-danger'>User Not Found</div>
-    //     // )
-    // }
 
     if (loading) {
         return <Loading></Loading>
