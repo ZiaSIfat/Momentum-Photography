@@ -19,5 +19,13 @@
 @media screen and (min-width: 577px) and (max-width: 992px) {
     .review-div {
         width: 250px;
+        /* margin-left: 50px; */
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .review-div {
+        width: 250px;
+        margin-left: 50px;
     }
 }

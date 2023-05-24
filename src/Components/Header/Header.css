@@ -7,6 +7,11 @@
 .navbar {
     color: white;
     text-decoration: none;
+    /* background-color: rgb(135, 191, 226); */
+}
+
+nav a.active {
+    border-bottom: 2px solid rgb(135, 191, 226);
 }
 
 .navbar:hover {

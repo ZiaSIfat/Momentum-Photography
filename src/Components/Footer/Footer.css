@@ -32,3 +32,13 @@
     color: rgb(135, 191, 226);
 
 }
+
+@media screen and (max-width: 576px) {
+    .footer-section {
+        display: block;
+    }
+
+    .footer-div {
+        height: 560px;
+    }
+}
