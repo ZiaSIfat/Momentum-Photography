@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import './Login.css';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -16,11 +16,12 @@ import { ImGoogle3 } from "react-icons/im";
 
 
 const Login = () => {
-
-    const { id } = useParams();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const from = location?.state?.from?.pathname || '/';
 
 
 
@@ -72,7 +73,7 @@ const Login = () => {
     }
 
     if (user || user1 || user2 || user3) {
-        navigate(`/checkout/${id}`);
+        navigate(from);
     }
 
 
@@ -93,8 +94,8 @@ const Login = () => {
                         <br />
                         <button className='submit-btn'>Login</button>
                     </form>
-                    <p className='navigate'>Dont have an account? <Link className='login' to='/signup'>Please Signup</Link></p>
-                    <p className='navigate'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
+                    <p className='text-white'>Dont have an account? <Link state={location.state} className='login' to='/signup'>Please Signup</Link></p>
+                    <p className='text-white'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
                     <p className='text-danger'>{error?.message || error1?.message || error2?.message || error3?.message}</p>
                     <ToastContainer />
                 </div>

@@ -14,6 +14,7 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import NotFound from './Components/NotFound/NotFound';
 import { Last } from 'react-bootstrap/esm/PageItem';
 import { Element } from 'react-scroll';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path='/last' element={<Last></Last>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
+        <Toaster />
         <Footer></Footer>
       </div>
     </Element>

@@ -5,8 +5,10 @@ import { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+
+
+import Swal from 'sweetalert2';
 
 
 const Checkout = () => {
@@ -46,13 +48,14 @@ const Checkout = () => {
         setPhone(e.target.value);
     }
 
-    if (loading) {
-        setMessage("Thanks for booking")
-    }
+    // if (loading) {
+    //     setMessage("Thanks for booking")
+    // }
 
     const handleSubmit = () => {
-        toast("Thanks for booking");
-        // navigate("/");
+        // toast.success('Successfully toasted!')
+        Swal.fire('Thanks for your Booking')
+        navigate("/");
     }
 
 
@@ -72,7 +75,7 @@ const Checkout = () => {
                         <input onBlur={handlePhoneBlur} type="number" placeholder='Phone' />
                         <br />
                         <button onClick={handleSubmit} className='submit-btn'>Book</button>
-                        <ToastContainer />
+                        {/* <ToastContainer /> */}
                     </form>
                 </div>
             </div>

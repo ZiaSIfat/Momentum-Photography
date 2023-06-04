@@ -25,6 +25,7 @@
     border-radius: 8px;
     width: 250px;
     margin: 8px;
+    border: none;
 }
 
 .submit-btn:hover {
@@ -40,10 +41,6 @@
 
 .login:hover {
     color: rgb(37, 126, 182);
-}
-
-.navigate {
-    color: white;
 }
 
 .reset-btn {

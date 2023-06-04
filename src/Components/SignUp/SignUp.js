@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import './SignUp.css';
@@ -13,6 +13,9 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     const navigate = useNavigate();
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/'
+    console.log(from);
     const [error, setError] = useState('');
 
     const [
@@ -43,13 +46,19 @@ const SignUp = () => {
             setError("Passwords didn't matched");
             return;
         }
-        createUserWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password)
+            .then(result => {
+                navigate(from)
+            })
+            .catch(error =>
+                console.log(error.message)
+            )
 
     }
 
-    if (user) {
-        navigate('/');
-    }
+    // if (user) {
+    //     navigate(from);
+    // }
 
     if (loading) {
         return <Loading></Loading>;
@@ -75,7 +84,7 @@ const SignUp = () => {
                             <button className='submit-btn'>SignUp</button>
                             <p className='text-danger'>{error}</p>
                         </form>
-                        <p className='navigate'>Already have an account? <Link className='signup' to='/login'>Please Login</Link></p>
+                        <p className='text-white'>Already have an account? <Link className='signup' to='/login'>Please Login</Link></p>
                         <p>{error?.message}</p>
                     </div>
                 </div>

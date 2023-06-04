@@ -11,7 +11,10 @@ const Service = ({ service }) => {
         navigate(`/checkout/${id}`);
     }
 
+
+
     return (
+
         <div className='card-div mb-4'>
             <h1 className='mt-3'>{name}</h1>
             <hr className='text-white' />
@@ -26,7 +29,6 @@ const Service = ({ service }) => {
             <p>{description4}</p>
             <button onClick={() => handleCheckout(id)} className='mt-3 checkout-btn'>Book Now</button>
         </div>
-
 
 
     );

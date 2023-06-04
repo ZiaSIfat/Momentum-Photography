@@ -21,4 +21,5 @@
 .card-div:hover {
     background-color: black;
     transform: scale(1.1);
+    border: 1px solid black;
 }

@@ -7,7 +7,7 @@
 .navbar {
     color: white;
     text-decoration: none;
-    /* background-color: rgb(135, 191, 226); */
+
 }
 
 nav a.active {
@@ -27,6 +27,7 @@ nav a.active {
     background-color: rgb(135, 191, 226);
     color: white;
     border-radius: 8px;
+    border: none;
 }
 
 .signout-btn:hover {

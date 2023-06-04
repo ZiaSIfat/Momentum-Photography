@@ -31,16 +31,16 @@ const AboutMe = () => {
 
     return (
         <div className='container'>
-            <h1 className='text-white mb-4 '>About Me</h1>
+            <h1 className='text-black mb-4 '>About Me</h1>
             <div className='about-div'>
-                <div className='me-5'>
+                <div className='me-5 w-25 mx-auto'>
                     <Card style={{ width: '10rem' }}>
                         <Card.Img variant="top" src={img} />
 
                     </Card>
-                    <h2 className='name mt-2'>{text}</h2>
+                    <h2 className='name mt-2 w-50'>{text}</h2>
                 </div>
-                <div className='text-white'>
+                <div className='text-black w-50'>
                     <p>{text1}</p>
                 </div>
             </div>
