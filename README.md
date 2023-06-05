@@ -10,3 +10,4 @@ Live Site:  https://momentum-897aa.web.app
 
 ## List of Technologies
 
+react,firebase,bootstrap.I have used AOS animation to animate my homepage
