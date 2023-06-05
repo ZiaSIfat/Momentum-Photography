@@ -6,7 +6,9 @@ import { AiFillStar } from "react-icons/ai"
 const Review = ({ review }) => {
     const { name, description, img } = review;
     return (
+
         <div className='mt-4'>
+
             <div className='review-div'>
                 <div>
                     <img className='review-img ms-4 mt-3 mb-5' src={img} alt="" />
@@ -17,6 +19,7 @@ const Review = ({ review }) => {
                     <p><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /></p>
                 </div>
             </div>
+
         </div>
     );
 };

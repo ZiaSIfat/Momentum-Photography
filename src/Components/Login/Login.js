@@ -94,9 +94,9 @@ const Login = () => {
                         <br />
                         <button className='submit-btn'>Login</button>
                     </form>
+                    <p className='text-danger'>{error?.message || error1?.message || error2?.message || error3?.message}</p>
                     <p className='text-white'>Dont have an account? <Link state={location.state} className='login' to='/signup'>Please Signup</Link></p>
                     <p className='text-white'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
-                    <p className='text-danger'>{error?.message || error1?.message || error2?.message || error3?.message}</p>
                     <ToastContainer />
                 </div>
 
