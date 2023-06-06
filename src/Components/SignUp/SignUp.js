@@ -15,7 +15,6 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
-    console.log(from);
     const [error, setError] = useState('');
 
     const [
@@ -56,9 +55,9 @@ const SignUp = () => {
 
     }
 
-    // if (user) {
-    //     navigate(from);
-    // }
+    if (user) {
+        navigate(from);
+    }
 
     if (loading) {
         return <Loading></Loading>;
