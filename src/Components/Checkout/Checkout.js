@@ -1,10 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-// import { Toast } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
+import checkoutpic from "../../Images/checkout.png";
+import './Checkout.css';
 
 
 import Swal from 'sweetalert2';
@@ -56,8 +57,11 @@ const Checkout = () => {
 
 
     return (
-        <div>
-            <div className='signup-form'>
+        <div className='checkout-page container'>
+            <div>
+                <img src={checkoutpic} alt="" />
+            </div>
+            <div className='signup-form mb-5'>
                 <div>
                     <h5 className='title'>Package: {details[0]?.name}</h5>
                     <h5 className='title'>Price: {details[0]?.price}</h5>

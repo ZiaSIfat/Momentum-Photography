@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import signup from '../../Images/signup.png'
 import './SignUp.css';
 
 const SignUp = () => {
@@ -65,10 +66,13 @@ const SignUp = () => {
 
     return (
         <div>
-            <div className='container'>
-                <div className='signup-form'>
+            <div className='container signup-page'>
+                <div>
+                    <img className='signup-pic' src={signup} alt="" />
+                </div>
+                <div className='signup-form mb-5'>
                     <div>
-                        <h1 className='title'>SignUp</h1>
+                        <h1 className='title mt-4'>SignUp</h1>
                         <form onSubmit={handleSignUp}>
                             <input onBlur={handleNameBlur} type="text" placeholder='Name' required />
                             <br />
@@ -83,7 +87,7 @@ const SignUp = () => {
                             <button className='submit-btn'>SignUp</button>
                             <p className='text-danger'>{error}</p>
                         </form>
-                        <p className='text-white'>Already have an account? <Link className='signup' to='/login'>Please Login</Link></p>
+                        <p className='text-white mb-4'>Already have an account? <Link className='signup' to='/login'>Please Login</Link></p>
                         <p>{error?.message}</p>
                     </div>
                 </div>

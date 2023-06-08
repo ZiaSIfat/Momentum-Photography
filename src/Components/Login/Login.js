@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { SiFacebook } from "react-icons/si";
 import { VscGithub } from "react-icons/vsc";
 import { ImGoogle3 } from "react-icons/im";
+import pic from "../../Images/login.png";
 
 
 
@@ -82,10 +83,13 @@ const Login = () => {
     }
 
     return (
-        <div className='container'>
-            <div className='container login-form'>
+        <div className='container login-page'>
+            <div>
+                <img className='login-pic' src={pic} alt="" />
+            </div>
+            <div className='container login-form mb-5'>
                 <div>
-                    <h1 className='login-title'>Login</h1>
+                    <h1 className='login-title mt-4'>Login</h1>
                     <form onSubmit={handleLogin}>
                         <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Email' required />
                         <br />
@@ -97,22 +101,22 @@ const Login = () => {
                     <p className='text-white'>Dont have an account? <Link state={location.state} className='login' to='/signup'>Please Signup</Link></p>
                     <p className='text-white'>Forget password?<button className="btn btn-link reset-btn" onClick={resetPassword} >Reset Password</button> </p>
                     <ToastContainer />
+                    <div className='d-flex align-items-center'>
+                        <div className='line w-50'></div>
+                        <p className='text-white mt-2 px-2'>or</p>
+                        <div className='line w-50'></div>
+                    </div>
+                    <div >
+                        <button onClick={handleFacebook} className='submit-btn'><SiFacebook className='me-2 mb-1' />Facebook Login</button>
+                    </div>
+                    <div>
+                        <button onClick={handleGoogle} className='submit-btn'><ImGoogle3 className='me-2 mb-1' /> Google Login</button>
+                    </div>
+                    <div className='mb-4'>
+                        <button onClick={handleGithub} className='submit-btn'><VscGithub className='me-2 mb-1' />Github Login</button>
+                    </div>
                 </div>
 
-            </div>
-            <div className='d-flex align-items-center'>
-                <div className='line w-50'></div>
-                <p className='text-white mt-2 px-2'>or</p>
-                <div className='line w-50'></div>
-            </div>
-            <div >
-                <button onClick={handleFacebook} className='submit-btn'><SiFacebook className='me-2 mb-1' />Facebook Login</button>
-            </div>
-            <div>
-                <button onClick={handleGoogle} className='submit-btn'><ImGoogle3 className='me-2 mb-1' /> Google Login</button>
-            </div>
-            <div>
-                <button onClick={handleGithub} className='submit-btn'><VscGithub className='me-2 mb-1' />Github Login</button>
             </div>
         </div>
     );
